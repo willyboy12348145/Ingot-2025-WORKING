@@ -1,8 +1,8 @@
-# Patched!
-Ingot has been patched on Chrome 106 or after. This will not be updated.
+# Ingot 2025
+ fork of ingot. since the orginal repo was archived and the original exploit patched, I decided to improve it to see if i could get it working again.
 
 # Ingot
-A bookmarklet to disable extensions based on LTBEEF with an interface based on the chrome extension page
+Since the original exploit with the bookmarklet was patched, I decided to improve it to see if i could get it working without bookmarklets.
 
 ### Installation
 For easy setup go the the website at https://fognetwork.github.io/Ingot
