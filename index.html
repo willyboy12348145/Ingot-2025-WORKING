@@ -80,15 +80,26 @@
     <div class="button" onclick="launchIngot()">Launch Ingot</div>
     <div class="button-note">Click the button to disable extensions</div>
 
+    <div id="ingot-content"></div>
+
     <script>
         function launchIngot() {
-            if (window.location.href.includes('chrome://extensions/')) {
-                var script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot@latest/ingot.min.js';
-                document.body.appendChild(script);
-            } else {
-                alert('You need to be on the Chrome Extensions page to run this script.');
-            }
+            var ingotScript = document.createElement('script');
+            ingotScript.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot@latest/ingot.min.js';
+            ingotScript.onload = function() {
+                // Run the functionality of Ingot here
+                // Example: Initialize the interface
+                initializeIngotInterface();
+            };
+            document.body.appendChild(ingotScript);
+        }
+
+        function initializeIngotInterface() {
+            // Example: Adding content to #ingot-content div
+            var ingotContentDiv = document.getElementById('ingot-content');
+            ingotContentDiv.innerHTML = '<div>Extension-like GUI to disable extensions will be displayed here</div>';
+
+            // Add further initialization and logic as per ingot.min.js functionalities
         }
     </script>
 </body>
