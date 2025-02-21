@@ -43,4 +43,53 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font 
+            font-size: 24px;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .button:active {
+            background: rgba(138, 180, 248, 0.25);
+        }
+
+        .button-text {
+            opacity: 0;
+            user-select: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .button-note {
+            margin: 0 auto;
+            text-align: center;
+            color: rgb(138, 180, 248);
+            width: 300px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Ingot</div>
+
+    <div class="button" onclick="launchIngot()">Launch Ingot</div>
+    <div class="button-note">Click the button to disable extensions</div>
+
+    <script>
+        function launchIngot() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot@latest/ingot.min.js';
+            document.body.appendChild(script);
+        }
+        
+        // Automatically launch Ingot on page load
+        window.onload = function() {
+            launchIngot();
+        };
+    </script>
+</body>
+</html>
