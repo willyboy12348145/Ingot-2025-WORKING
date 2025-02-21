@@ -46,6 +46,7 @@
             font-size: 24px;
             user-select: none;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .button:active {
@@ -81,15 +82,14 @@
 
     <script>
         function launchIngot() {
-            var script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot@latest/ingot.min.js';
-            document.body.appendChild(script);
+            if (window.location.href.includes('chrome://extensions/')) {
+                var script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot@latest/ingot.min.js';
+                document.body.appendChild(script);
+            } else {
+                alert('You need to be on the Chrome Extensions page to run this script.');
+            }
         }
-        
-        // Automatically launch Ingot on page load
-        window.onload = function() {
-            launchIngot();
-        };
     </script>
 </body>
 </html>
